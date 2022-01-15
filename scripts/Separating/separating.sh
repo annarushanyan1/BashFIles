@@ -14,6 +14,7 @@ done
 len=${#array[@]}
 word=""
 count=0
+
 for each in "${array[@]}"
 do
   count=$((count+1))
