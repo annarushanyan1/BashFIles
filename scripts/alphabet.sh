@@ -7,11 +7,17 @@ cd alphabet
 for i in "${arr[@]}"
 do
    mkdir "$i"
+   
    cd "$i"
+   
    touch "$i".txt
-   CREATION_DATE=$(cd .. && stat "$i" >> "$i"/"$i".txt)
-   absalute_path=$(pwd)
+
+   echo $(cd .. && stat -c ‘%y’ "$i") >> "$i".txt
+  
+   echo $(cd .. && stat --printf="%s" "$i") >> "$i".txt   
+  
    echo $(pwd) >> "$i".txt
+
    cd ..
    # or do whatever with individual element of the array
 done
