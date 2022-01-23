@@ -35,8 +35,7 @@ public class Selection_Sort {
                 index = i;
             }
         }
-        int[] minAndIndex = {minValue, index};
-        return minAndIndex;
+        return new int[]{minValue, index};
     }
 
     public static int[] removeTheElement(int[] arr, int index) {
