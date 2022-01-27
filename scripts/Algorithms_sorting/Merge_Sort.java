@@ -1,9 +1,9 @@
-package ITC.scripts.Algorithms_sorting.Merge_Sorting;
+package ITC.scripts.Algorithms_sorting;
 
 
 import java.util.Arrays;
 
-public class Merging {
+public class Merge_Sort {
     public static void main(String[] args) {
         int[] array = new int[]{5, 6, 7, 2, 4, 1, 3};
         mergeSort(array,array.length);
