@@ -1,4 +1,4 @@
-package ITC.scripts.implementations_by_JAVA.LinkedList;
+package ITC.implementations_by_JAVA.LinkedList;
 
 public class Node {
     public String item;

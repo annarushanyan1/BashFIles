@@ -1,4 +1,4 @@
-package ITC.scripts.implementations_by_JAVA.Queue;
+package ITC.implementations_by_JAVA.Queue;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ITC.scripts.implementations_by_JAVA.Stack;
+package ITC.implementations_by_JAVA.Stack;
 
 public class Stack {
     Node root;

@@ -1,4 +1,4 @@
-package ITC.scripts.Algorithms_sorting;
+package ITC.Algorithms_sorting;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package ITC.scripts.Algorithms_searching;
+package ITC.Algorithms_searching;
 
 public class Binary_Search {
 
