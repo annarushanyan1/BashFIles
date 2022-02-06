@@ -11,7 +11,6 @@ class Graph {
 
     static void printGraphList (LinkedList<LinkedList<Integer> > adj) {
         for (int i = 0; i < adj.size(); ++i) {
-
             // Printing the head
             System.out.print(i + "->");
 
