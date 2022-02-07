@@ -1,55 +1,38 @@
 package ITC.algorithms.implemetations_using_array.Queue;
 
+import java.sql.Array;
 import java.util.Arrays;
 
-
-public class Queue <E> {
-    private int size = 0;
+public class Queue{
+    private int head = 0;
     private static final int DEFAULT_CAPACITY = 10;
-    private Object elements[];
-
-    public Queue() {
-        elements = new Object[DEFAULT_CAPACITY];
+    private int[] array;
+    public Queue(){
+        head = -1;
+        array = new int[DEFAULT_CAPACITY];
     }
 
-
-    public void enqueue(Object obj) throws Exception {
-        if (size == elements.length - 1) {
-            throw new Exception("Queue is full.");
+    public void enqueue(int value){
+        if(head == DEFAULT_CAPACITY - 1){
+            System.out.println("Queue is full");
+            return;
         }
-        this.elements[size] = obj;
-        this.size++;
-    }
-    public Object dequeue() throws Exception {
-        if (isEmpty()){
-            throw new Exception("Queue is empty");
-        }
+        head++;
+        array[head] = value;
 
-        Object obj = this.elements[0];
-
-        for (int i = 0; i < this.size - 1; i++) {
-            elements[i] = elements[i + 1];
-        }
-        this.size--;
-        return obj;
     }
 
-    public boolean isEmpty() {
-        return size == 0;
+    public int dequeue() {
+        int dequeued = array[head];
+        head--;
+        return dequeued;
     }
 
     @Override
-    public String toString()
-    {
-        StringBuilder sb = new StringBuilder();
-        sb.append('[');
-        for(int i = 0; i < size ;i++) {
-            sb.append(elements[i].toString());
-            if(i < size-1){
-                sb.append(",");
-            }
-        }
-        sb.append(']');
-        return sb.toString();
+    public String toString() {
+        return "Queue{" +
+                "head=" + head +
+                ", array=" + Arrays.toString(array) +
+                '}';
     }
 }

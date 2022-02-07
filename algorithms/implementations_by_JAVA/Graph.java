@@ -34,7 +34,6 @@ class Graph {
             adj.add(new LinkedList<Integer>());
         }
         System.out.println(adj);
-
         addEdge(adj, 0, 1);
         System.out.println(adj);
         addEdge(adj, 0, 4);
