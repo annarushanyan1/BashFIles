@@ -28,17 +28,27 @@ class Graph {
         int V = 5;
 
         LinkedList<LinkedList<Integer> > adj = new LinkedList<LinkedList<Integer> >();
+
+
         for (int i = 0; i < V; ++i) {
             adj.add(new LinkedList<Integer>());
         }
+        System.out.println(adj);
 
         addEdge(adj, 0, 1);
+        System.out.println(adj);
         addEdge(adj, 0, 4);
+        System.out.println(adj);
         addEdge(adj, 1, 2);
+        System.out.println(adj);
         addEdge(adj, 1, 3);
+        System.out.println(adj);
         addEdge(adj, 1, 4);
+        System.out.println(adj);
         addEdge(adj, 2, 3);
+        System.out.println(adj);
         addEdge(adj, 3, 4);
+        System.out.println(adj);
 
         printGraphList(adj);
     }
