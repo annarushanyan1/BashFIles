@@ -16,19 +16,23 @@ public class Queue{
         return array.length == DEFAULT_CAPACITY;
     }
 
+    public boolean isEmpty(){
+        return array.length == 0;
+    }
+
     public void enqueue(int value){
         if(isFull()){
             return;
         }
-        head++;
-        array[head] = value;
+        array[head++] = value;
 
     }
 
     public int dequeue() {
-        int dequeued = array[head];
-        head--;
-        return dequeued;
+        if(isEmpty()){
+            return -1;
+        }
+        return array[head--];
     }
 
     @Override
