@@ -1,45 +1,44 @@
 package ITC.algorithms.implemetations_using_array.Stack;
 import java.util.Arrays;
 
-public class Stack <E> {
-    private int size = 0;
+public class Stack {
+    private int head;
     private static final int DEFAULT_CAPACITY = 10;
-    private Object elements[];
-
-    public Stack() {
-        elements = new Object[DEFAULT_CAPACITY];
+    private int[] array;
+    public Stack(){
+        head = -1;
+        array = new int[DEFAULT_CAPACITY];
     }
 
-    public void push(E e) {
-        if (size == elements.length) {
-            ensureCapacity();
+    public boolean isFull(){
+        return head + 1 == DEFAULT_CAPACITY;
+    }
+
+    public boolean isEmpty(){
+        return head < 0;
+    }
+
+    public void push(int value){
+
+        if(!isFull()) {
+            array[++head] = value;
         }
-        elements[size++] = e;
+
+
     }
 
-    public E pop() {
-        E e = (E) elements[--size];
-        elements[size] = null;
-        return e;
-    }
-
-    private void ensureCapacity() {
-        int newSize = elements.length * 2;
-        elements = Arrays.copyOf(elements, newSize);
+    public int pop() {
+        if(isEmpty()){
+            return -1;
+        }
+        return array[head--];
     }
 
     @Override
-    public String toString()
-    {
-        StringBuilder sb = new StringBuilder();
-        sb.append('[');
-        for(int i = 0; i < size ;i++) {
-            sb.append(elements[i].toString());
-            if(i < size-1){
-                sb.append(",");
-            }
-        }
-        sb.append(']');
-        return sb.toString();
+    public String toString() {
+        return "Queue{" +
+                "head=" + head +
+                ", array=" + Arrays.toString(array) +
+                '}';
     }
 }
