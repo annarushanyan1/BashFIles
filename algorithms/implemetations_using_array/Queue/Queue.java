@@ -4,7 +4,7 @@ import java.sql.Array;
 import java.util.Arrays;
 
 public class Queue{
-    private int head = 0;
+    private int head;
     private static final int DEFAULT_CAPACITY = 10;
     private int[] array;
     public Queue(){
@@ -13,18 +13,19 @@ public class Queue{
     }
 
     public boolean isFull(){
-        return array.length == DEFAULT_CAPACITY;
+        return head + 1 == DEFAULT_CAPACITY;
     }
 
     public boolean isEmpty(){
-        return array.length == 0;
+        return head < 0;
     }
 
     public void enqueue(int value){
-        if(isFull()){
-            return;
+
+        if(!isFull()) {
+            array[++head] = value;
         }
-        array[head++] = value;
+
 
     }
 
