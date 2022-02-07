@@ -12,9 +12,12 @@ public class Queue{
         array = new int[DEFAULT_CAPACITY];
     }
 
+    public boolean isFull(){
+        return array.length == DEFAULT_CAPACITY;
+    }
+
     public void enqueue(int value){
-        if(head == DEFAULT_CAPACITY - 1){
-            System.out.println("Queue is full");
+        if(isFull()){
             return;
         }
         head++;
