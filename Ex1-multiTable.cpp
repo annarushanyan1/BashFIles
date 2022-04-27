@@ -18,9 +18,10 @@ int MultiTable(int number) {
 }
 
 int main(int args, char* argc[]) {
-    int number;
-    std::cout << "Enter the number: ";
-//    std::sin >> number;
-    while(true)
+    int number = -1;
+    while (number <= 0) {
+        std::cout << "Enter the number: ";
+        std::cin >> number;
+    }
     MultiTable(9);
 }
